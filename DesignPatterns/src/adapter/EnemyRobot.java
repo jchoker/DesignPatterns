@@ -1,0 +1,35 @@
+/**
+ * This is the Adaptee. The Adapter sends method calls to objects that use the EnemyAttacker interface to the right methods defined in EnemyRobot
+ */
+
+package adapter;
+
+import java.util.Random;
+
+/**
+ * @author Jalal Choker
+ * @since 06-08-2022
+ */
+
+public class EnemyRobot {
+
+	private final Random generator = new Random();	
+
+	public void smashWithHands() {
+		int attackDamage = generator.nextInt(10) + 1;
+
+		System.out.println("Enemy Robot Causes " + attackDamage + " Damage With Its Hands");
+	}
+
+	public void walkForward() {
+		int movement = generator.nextInt(5) + 1;
+
+		System.out.println("Enemy Robot Walks Forward " + movement + " spaces");
+	}
+
+	public void reactToHuman(String driverName) {
+
+		System.out.println("Enemy Robot Tramps on " + driverName);
+
+	}
+}
